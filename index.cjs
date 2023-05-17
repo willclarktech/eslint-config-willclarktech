@@ -3,6 +3,7 @@ const tsConfig = {
 	extends: [
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:functional/external-typescript-recommended",
 		"plugin:import/typescript",
 	],
 	parser: "@typescript-eslint/parser",
@@ -62,7 +63,7 @@ module.exports = {
 		"plugin:prettier/recommended",
 		"plugin:eslint-comments/recommended",
 		"plugin:import/recommended",
-		"plugin:functional/external-recommended",
+		"plugin:functional/external-vanilla-recommended",
 		"plugin:functional/no-mutations",
 	],
 	rules: {
@@ -108,6 +109,7 @@ module.exports = {
 			rules: {
 				// `exports` object is mutable
 				"functional/immutable-data": "off",
+				"functional/prefer-immutable-types": "off",
 				"import/no-commonjs": "off",
 				"import/unambiguous": "off",
 			},
