@@ -72,6 +72,22 @@ module.exports = {
 		"no-undef": "error",
 		"sort-imports": ["error", { ignoreDeclarationSort: true }],
 
+		// @typescript-eslint
+		// emulate TS style of ignoring unused names beginning with _
+		// see https://typescript-eslint.io/rules/no-unused-vars/#benefits-over-typescript
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				args: "all",
+				argsIgnorePattern: "^_",
+				caughtErrors: "all",
+				caughtErrorsIgnorePattern: "^_",
+				destructuredArrayIgnorePattern: "^_",
+				varsIgnorePattern: "^_",
+				ignoreRestSiblings: true,
+			},
+		],
+
 		// allow disabling eslint rules for whole file without re-enabling it at the end of the file
 		"eslint-comments/disable-enable-pair": ["error", { allowWholeFile: true }],
 		// make sure every eslint-disable comments are is used
