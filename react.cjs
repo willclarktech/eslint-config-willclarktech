@@ -4,8 +4,6 @@ module.exports = {
 		"willclarktech",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
-		"react-app",
-		"react-app/jest",
 		"plugin:i18next/recommended",
 	],
 	rules: {

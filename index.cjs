@@ -94,7 +94,10 @@ module.exports = {
 		"eslint-comments/no-unused-disable": "error",
 
 		// functional
-		"functional/immutable-data": ["error", { ignorePattern: "this" }],
+		"functional/immutable-data": [
+			"error",
+			{ ignoreAccessorPattern: "this.**" },
+		],
 
 		// import
 		"import/extensions": ["error", "always", { ts: "never", tsx: "never" }],
