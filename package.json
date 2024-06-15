@@ -19,6 +19,10 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org"
 	},
+	"engines": {
+		"node": ">=20",
+		"npm": ">=10"
+	},
 	"scripts": {
 		"format": "prettier --write \"*.cjs\"",
 		"format:check": "prettier --check index.cjs",
