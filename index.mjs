@@ -113,9 +113,18 @@ const config = [
 	},
 	{
 		// Test files configuration
-		files: ["**/*.test.{cjs,cts,js,mjs,mts,ts,tsx}"],
+		files: ["**/*.{spec,test}.{cjs,cts,js,mjs,mts,ts,tsx}"],
 		plugins: {
 			jest: jestPlugin,
+		},
+		languageOptions: {
+			globals: {
+				describe: "readonly",
+				it: "readonly",
+				expect: "readonly",
+				beforeEach: "readonly",
+				afterEach: "readonly",
+			},
 		},
 		rules: {
 			"@typescript-eslint/no-explicit-any": "off",
