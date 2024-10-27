@@ -1,5 +1,5 @@
 const tsConfig = {
-	plugins: ["@typescript-eslint", "deprecation"],
+	plugins: ["@typescript-eslint"],
 	extends: [
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -27,9 +27,6 @@ const tsConfig = {
 		// use with functional/prefer-readonly-type
 		// mark class variables as readonly if not mutated
 		"@typescript-eslint/prefer-readonly": "error",
-
-		// deprecation
-		"deprecation/deprecation": "warn",
 
 		// functional
 		// use with @typescript-eslint/prefer-readonly
