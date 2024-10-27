@@ -33,7 +33,7 @@
 		"prepare": "npm run verify"
 	},
 	"dependencies": {
-		"@rushstack/eslint-patch": "^1.10.3"
+		"@rushstack/eslint-patch": "^1.10.4"
 	},
 	"devDependencies": {
 		"eslint": "^8.57.0",
