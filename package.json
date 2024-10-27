@@ -26,8 +26,8 @@
 	"scripts": {
 		"format": "prettier --write \"*.mjs\"",
 		"format:check": "prettier --check index.mjs",
-		"lint": "eslint \"./*.mjs\"",
-		"lint:fix": "eslint --fix \"./*.mjs\"",
+		"lint": "eslint \"./*.mjs\" \"./patch/*.mjs\"",
+		"lint:fix": "eslint --fix \"./*.mjs\" \"./patch/*.mjs\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"verify": "npm run format:check && npm run lint",
 		"prepare": "npm run verify"
