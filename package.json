@@ -3,12 +3,12 @@
 	"version": "0.0.0",
 	"description": "Default ESLint configuration for personal projects.",
 	"exports": {
-		".": "./index.cjs",
-		"./patch/modern-module-resolution.cjs": "./patch/modern-module-resolution.cjs",
-		"./react": "./react.cjs"
+		".": "./index.mjs",
+		"./patch/modern-module-resolution.mjs": "./patch/modern-module-resolution.mjs",
+		"./react": "./react.mjs"
 	},
 	"files": [
-		"*.cjs",
+		"*.mjs",
 		"*.md"
 	],
 	"repository": {
@@ -24,10 +24,10 @@
 		"npm": ">=10"
 	},
 	"scripts": {
-		"format": "prettier --write \"*.cjs\"",
-		"format:check": "prettier --check index.cjs",
-		"lint": "eslint \"./*.cjs\"",
-		"lint:fix": "eslint --fix \"./*.cjs\"",
+		"format": "prettier --write \"*.mjs\"",
+		"format:check": "prettier --check index.mjs",
+		"lint": "eslint \"./*.mjs\"",
+		"lint:fix": "eslint --fix \"./*.mjs\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"verify": "npm run format:check && npm run lint",
 		"prepare": "npm run verify"

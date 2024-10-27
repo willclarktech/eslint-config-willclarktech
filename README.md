@@ -30,24 +30,28 @@ npm install --save-dev eslint-config-react-app eslint-plugin-i18next eslint-plug
 
 ## Usage
 
-In JS/TS projects extend from the default config in your ESLint configuration file `.eslintrc.cjs`:
+In JS/TS projects extend from the default config in your ESLint configuration file `eslint.config.mjs`:
 
 ```js
-module.exports = {
-	extends: ["eslint-config-willclarktech"],
-};
+import willclarktechConfig from "eslint-config-willclarktech";
+
+const config = [...willclarktechConfig];
+
+export default config;
 ```
 
 For TS projects, mark the `tsconfigRootDir` for detecting the location of the correct `tsconfig.json`:
 
 ```js
-module.exports = {
-	extends: ["eslint-config-willclarktech"],
-	parserOptions: {
-		// Make sure correct `tsconfig.json` is found eg in a monorepo
-		tsconfigRootDir: __dirname,
-	},
-};
+import willclarktechConfig from "eslint-config-willclarktech";
+
+const config = [
+	...willclarktechConfig,
+	// Make sure correct `tsconfig.json` is found eg in a monorepo
+	{ parserOptions: { tsconfigRootDir: __dirname } },
+];
+
+export default config;
 ```
 
 In React projects extend from the `react` config:
@@ -58,11 +62,13 @@ module.exports = {
 };
 ```
 
-If you are using this config in a monorepo, and experiencing the error `ESLint couldn't determine the plugin "xxx" uniquely`, you can apply this patch in your `.eslintrc.cjs` file to solve the issue:
+If you are using this config in a monorepo, and experiencing the error `ESLint couldn't determine the plugin "xxx" uniquely`, you can apply this patch in your `eslint.config.mjs` file to solve the issue:
 
 ```js
-require("eslint-config-willclarktech/patch/modern-module-resolution.cjs");
+import "eslint-config-willclarktech/patch/modern-module-resolution.mjs";
 ```
+
+This is just a wrapper around [`@rushstack/eslint-patch/modern-module-resolution`](https://github.com/microsoft/rushstack/tree/76315fdd164c3afb61813f03b571858d547965b5/eslint/eslint-patch#modern-module-resolution-feature).
 
 ## Known issues
 
